@@ -26,7 +26,7 @@ of:
     - Multithreading using AsyncTasks
     
 It also has a simple server side written in Java using Spring Boot that allows for user Authentication and Data syncing on a remote
-MySQL database. It can be seen at https://github.com/yordan-lyutskanov/finance-tracking-app-server
+MySQL database. It can be seen at https://github.com/yordan-lyutskanov/finance-tracking-app-server.
 
 If you came accross my code and have any Idea how to improve it, any suggests or feedback, fell free to give them. I would highly 
 appreciate any advice that will teach me something new and make me a better programmer.
