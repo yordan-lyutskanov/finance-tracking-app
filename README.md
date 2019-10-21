@@ -12,7 +12,9 @@ usefull. App consists of the following features:
   4. View a list of all expenses, with ability to filter them.
   5. All data is stored in SQLite DB on the phone, but can be synced with a Server.
   6. Enable / Disable notifications, that remind you to update your daily expenses.
-  7. Setup and Track Budgets and more...
+  7. Setup and Track Budgets
+  8. Scan QR Code on Bulgarian Receipts
+  9. Export Expenses int CSV file and share them.
 
 This project of mine really helped me learn a lot. It has a client side written in Java using the Android Framework, that makes use
 of:
