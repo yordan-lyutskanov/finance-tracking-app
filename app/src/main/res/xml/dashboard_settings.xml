@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="show_bar_chart"
+        android:title="Show barchart" />
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="show_average_daily"
+        android:title="Show average daily spending" />
+
+</androidx.preference.PreferenceScreen>

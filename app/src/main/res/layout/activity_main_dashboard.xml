@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009E9B9B"
+    android:backgroundTint="#00666565"
+    tools:context=".view.ui.activities.ActivityMainDashboard">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFDBDB"
+        android:backgroundTint="@color/cardview_light_background">
+
+        <ScrollView
+            android:id="@+id/main_dashboard_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#007E7C7C"
+            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTintMode="src_in">
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="100dp">
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/oswald_bold"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:padding="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Welcome to your Dashboard"
+                    android:textSize="36sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="start|left"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/lineHorizontal"
+                        app:layout_constraintEnd_toEndOf="@+id/lineHorizontal"
+                        app:layout_constraintHorizontal_bias="0.554"
+                        app:layout_constraintStart_toEndOf="@+id/lineVertical"
+                        app:layout_constraintTop_toTopOf="@+id/lineVertical">
+
+                        <TextView
+                            android:id="@+id/tv_total_today"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_vertical"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="21.3 BGN"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="-8dp"
+                            android:fontFamily="@font/oswald_regular"
+                            android:paddingStart="1dp"
+                            android:text="Spent today"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_small_arrow_daily"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:rotation="45"
+                            android:tint="#F44336"
+                            app:srcCompat="@drawable/ic_long_arrow_pointing_up" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lineVertical"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@color/colorPrimary" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.549"
+                        app:srcCompat="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_timely_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="start|left"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/lineVertical"
+                        app:layout_constraintHorizontal_bias="0.461"
+                        app:layout_constraintStart_toStartOf="@+id/lineHorizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/lineHorizontal">
+
+                        <TextView
+                            android:id="@+id/tv_timely_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_vertical"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:includeFontPadding="true"
+                            android:shadowColor="#8BC34A"
+                            android:text="1300 лв."
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_timely_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="-8dp"
+                            android:fontFamily="@font/oswald_regular"
+                            android:includeFontPadding="true"
+                            android:paddingStart="1dp"
+                            android:text="Untill 25/10/2019"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_timely_remaining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/oswald_regular"
+                            android:includeFontPadding="false"
+                            android:text="28 days to go."
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@color/colorPrimary" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/lineVertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/lineHorizontal3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/lineVertical"
+                        app:layout_constraintTop_toTopOf="@+id/lineHorizontal">
+
+                        <TextView
+                            android:id="@+id/tv_total_weekly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_vertical"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="221.3 BGN"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left|center_vertical"
+                            android:layout_marginTop="-8dp"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="left"
+                            android:paddingStart="1dp"
+                            android:text="Spent this week"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_small_arrow_monthly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:rotation="135"
+                            android:tint="#4CAF50"
+                            app:srcCompat="@drawable/ic_long_arrow_pointing_up" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/lineHorizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/lineVertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/lineVertical">
+
+                        <TextView
+                            android:id="@+id/max_category_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right|center_vertical"
+                            android:fontFamily="@font/oswald_regular"
+                            android:text="0.00 лв."
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/max_category_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="-8dp"
+                            android:fontFamily="@font/oswald_regular"
+                            android:gravity="center_horizontal|left"
+                            android:paddingStart="1dp"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_category_most_spend"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="left"
+                            app:srcCompat="@drawable/ic_category_home" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bc_main_dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp">
+
+                    </com.github.mikephil.charting.charts.BarChart>
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="-16dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:text="Weekly insights"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.549"
+                        app:srcCompat="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_average_daily"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal8"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_average_last_7_days"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17"
+                        app:srcCompat="@color/colorAccent" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal9"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_average_last_7_days"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView24"
+                        app:srcCompat="@color/colorAccent" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal10"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_average_last_7_days"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView23"
+                        app:srcCompat="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:text="Average Daily"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal7"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/oswald_regular"
+                        android:text="Last 7 days:"
+                        app:layout_constraintEnd_toStartOf="@+id/textView13"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/oswald_regular"
+                        android:text="Last 30 days:"
+                        app:layout_constraintEnd_toEndOf="@+id/textView17"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/oswald_regular"
+                        android:text="Last year: "
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView23"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView23"
+                        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                    <TextView
+                        android:id="@+id/tv_average_last_7_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:text="110.20 лв."
+                        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.506"
+                        app:layout_constraintStart_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+                    <TextView
+                        android:id="@+id/tv_average_last_30_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:text="60.25 лв."
+                        app:layout_constraintEnd_toEndOf="@+id/tv_average_last_7_days"
+                        app:layout_constraintStart_toStartOf="@+id/tv_average_last_7_days"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average_last_7_days" />
+
+                    <TextView
+                        android:id="@+id/tv_average_last_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:text="58.30 лв."
+                        app:layout_constraintEnd_toEndOf="@+id/tv_average_last_30_days"
+                        app:layout_constraintStart_toStartOf="@+id/tv_average_last_30_days"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average_last_30_days" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_monthly_budget_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/oswald_bold"
+                        android:shadowColor="#6F7071"
+                        android:text="Monthly Budget Info"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_expand_budget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:srcCompat="@drawable/ic_thin_arrowheads_pointing_down" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_budget_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/lineHorizontal4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.549"
+                        app:srcCompat="@color/colorPrimary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            style="@style/Widget.MaterialComponents.BottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="#00FFFFFF"
+            app:fabCradleRoundedCornerRadius="40dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF">
+
+                <ImageView
+                    android:id="@+id/iv_go_home"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_go_all_purchases"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_list"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_go_home" />
+
+                <ImageView
+                    android:id="@+id/iv_go_statistics"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_bar_graph"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_go_settings" />
+
+                <ImageView
+                    android:id="@+id/iv_go_settings"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_setting"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/main_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            app:fabSize="normal"
+            app:layout_anchor="@id/bottom_app_bar" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

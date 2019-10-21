@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tempClasses.DashBoard">
+
+    <ImageView
+        android:id="@+id/lineHorizontal6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@color/colorPrimary" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie_chart"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.github.mikephil.charting.charts.PieChart>
+
+    <Switch
+        android:id="@+id/values_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-16dp"
+        app:layout_constraintEnd_toEndOf="@+id/pie_chart"
+        app:layout_constraintTop_toBottomOf="@+id/pie_chart" />
+
+    <TextView
+        android:id="@+id/tv_values_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald"
+        android:text="Values"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/values_switch"
+        app:layout_constraintEnd_toStartOf="@+id/values_switch"
+        app:layout_constraintTop_toTopOf="@+id/values_switch"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pie_chart"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="@+id/pie_chart"
+        app:layout_constraintTop_toBottomOf="@+id/tv_values_label">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_legend_color_8"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/iv_legend_color_9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_7"
+                app:srcCompat="@color/colorPie7" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_6"
+                app:srcCompat="@color/colorPie7" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@color/colorPie7" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_5"
+                app:srcCompat="@color/colorPie7" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_9"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_9"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_9" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_7"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_7"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_7" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_8"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_8"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_8" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_6"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_6"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_6" />
+
+            <TextView
+                android:id="@+id/tv_legend_value8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry8" />
+
+            <TextView
+                android:id="@+id/tv_legend_value6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry6" />
+
+            <TextView
+                android:id="@+id/tv_legend_value7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry7" />
+
+            <TextView
+                android:id="@+id/tv_legend_value9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry9" />
+
+            <TextView
+                android:id="@+id/tv_legend_value5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry5" />
+
+            <TextView
+                android:id="@+id/tv_legend_value4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_legend_value3" />
+
+            <TextView
+                android:id="@+id/tv_legend_value3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry3" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_4"
+                app:srcCompat="@color/colorPie7" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_legend_entry6"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_5"
+                app:layout_constraintTop_toBottomOf="@+id/tv_legend_entry4" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_legend_entry4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_3"
+                app:srcCompat="@color/colorPie3" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_4"
+                app:layout_constraintStart_toStartOf="@+id/tv_legend_entry3"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_2"
+                app:srcCompat="@color/colorPie2" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_3"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_3"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_3" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_legend_color_1"
+                app:srcCompat="@color/colorPie1" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_2"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_2"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_2" />
+
+            <TextView
+                android:id="@+id/tv_legend_entry1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_legend_color_1"
+                app:layout_constraintStart_toEndOf="@+id/iv_legend_color_1"
+                app:layout_constraintTop_toTopOf="@+id/iv_legend_color_1" />
+
+            <ImageView
+                android:id="@+id/iv_legend_color_1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/colorPie" />
+
+            <TextView
+                android:id="@+id/tv_legend_value2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_legend_entry1" />
+
+            <TextView
+                android:id="@+id/tv_legend_value1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/oswald_regular"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_legend_entry1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_legend_entry1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_regular"
+        android:text="By category - Last 30 days."
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/pie_chart"
+        app:layout_constraintTop_toBottomOf="@+id/pie_chart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

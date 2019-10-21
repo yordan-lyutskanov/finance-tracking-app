@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_expense_root_element"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_1"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".view.ui.activities.ActivityAddExpense">
+
+    <LinearLayout
+        android:id="@+id/ll_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_submit">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald_regular"
+            android:gravity="center_horizontal"
+            android:text="Please wait... \n Your Invoice is being processed"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/iv_category_color"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subcategory">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/oswald"
+            android:hint="@string/item_name"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="190dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald_bold"
+        android:includeFontPadding="false"
+        android:text="@string/add_item"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/til_name"
+        app:layout_constraintTop_toTopOf="@+id/bt_submit"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="48dp"
+        android:background="@color/colorPie"
+        android:isScrollContainer="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/til_price"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/til_price"
+        app:layout_constraintTop_toBottomOf="@+id/bt_submit">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListItems"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/colorPie"
+            android:isScrollContainer="false" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_last_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-4dp"
+        android:fontFamily="@font/oswald"
+        android:textColor="#9ccc65"
+        app:layout_constraintStart_toStartOf="@+id/til_price"
+        app:layout_constraintTop_toBottomOf="@+id/til_price" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_category_color"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <TextView
+        android:id="@+id/tv_subcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/iv_category_color"
+        app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+
+
+    <ImageView
+        android:id="@+id/iv_category_color"
+        android:layout_width="6dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorPie" />
+
+    <ImageView
+        android:id="@+id/iv_category_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/iv_category_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_category_home" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald_regular"
+        android:text="Jul 31 2019"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/iv_category_color"
+        app:layout_constraintTop_toBottomOf="@+id/iv_category_icon" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald"
+        android:gravity="center"
+        android:text="10000.00 лв"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_submit"
+        app:layout_constraintEnd_toStartOf="@+id/bt_submit"
+        app:layout_constraintStart_toEndOf="@+id/btAddItem" />
+
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/oswald_bold"
+        android:includeFontPadding="true"
+        android:padding="4dp"
+        android:text="Submit"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/til_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_last_item" />
+
+
+    <ImageView
+        android:id="@+id/iv_change_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_date"
+        app:srcCompat="@drawable/ic_edit" />
+
+    <ImageView
+        android:id="@+id/iv_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_change_expense"
+        app:layout_constraintEnd_toStartOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_change_expense"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_scan" />
+
+    <TextView
+        android:id="@+id/tv_rearange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald"
+        android:text="Detailed expense"
+        app:layout_constraintEnd_toEndOf="@+id/iv_switch_constraints"
+        app:layout_constraintTop_toBottomOf="@+id/iv_switch_constraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/til_name"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/til_name"
+        app:layout_constraintTop_toBottomOf="@+id/til_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/oswald"
+            android:hint="@string/price"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="246dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_switch_constraints"
+        android:layout_width="21dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:srcCompat="@drawable/ic_thin_arrowheads_pointing_down" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

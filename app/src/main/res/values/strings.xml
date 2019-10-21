@@ -1,0 +1,32 @@
+<resources>
+    <string name="title_activity_add_purchase">AddPurchase</string>
+
+    <!-- Names of all hardcoded categories -->
+    <string name="housing_root">Housing</string>
+    <string name="utilities_root">Utilities</string>
+    <string name="groceries_root">Food</string>
+    <string name="transportation_root">Transportation</string>
+    <string name="personal_root">Personal</string>
+    <string name="entertainment_root">Entertainment</string>
+    <string name="health_root">Health</string>
+    <string name="savings_root">Savings</string>
+    <string name="others_root">Others</string>
+
+
+    <string name="title_activity_dash">Dash</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="active_filter">Active filter:</string>
+    <string name="price">Price</string>
+    <string name="price_underline"><u>Price</u></string>
+    <string name="item_name">Item Name</string>
+    <string name="item_name_underline"><u>Item Name</u></string>
+    <string name="add_item">Add Item</string>
+    <string name="total">Total:</string>
+    <string name="detailed_expense_label">Detailed expense</string>
+    <string name="simple_expense_label">Simple expense</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="app_name">Finance</string>
+
+
+</resources>

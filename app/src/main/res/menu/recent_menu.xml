@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_filter"
+        android:icon="@drawable/ic_filter"
+        android:title="Filter"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item android:title="Date"
+                android:id="@+id/item_root_date">
+                <menu>
+                    <item
+                        android:id="@+id/item_filter_date_today"
+                        android:title="Today"/>
+                    <item
+                        android:id="@+id/item_filter_date_yesterday"
+                        android:title="Yesterday"/>
+                    <item
+                        android:id="@+id/item_filter_date_week"
+                        android:title="Last Week"/>
+                    <item
+                        android:id="@+id/item_filter_date_month"
+                        android:title="Last Month"/>
+                    <item
+                        android:id="@+id/item_filter_date_year"
+                        android:title="Last Year"/>
+                    <item
+                        android:id="@+id/item_filter_date_all"
+                        android:title="Show all"/>
+                </menu>
+            </item>
+
+            <item android:title="Category"
+                android:id="@+id/item_root_cat">
+                <menu>
+                    <item
+                        android:id="@+id/item_filter_category_1"
+                        android:icon="@drawable/ic_category_home"
+                        android:title="@string/housing_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_2"
+                        android:icon="@drawable/ic_categories_utilities"
+                        android:title="@string/utilities_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_3"
+                        android:icon="@drawable/ic_category_groceries"
+                        android:title="@string/groceries_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_4"
+                        android:icon="@drawable/ic_categories_transportation"
+                        android:title="@string/transportation_root"
+                        />
+                    <item
+                        android:id="@+id/item_filter_category_5"
+                        android:icon="@drawable/ic_categories_personal"
+                        android:title="@string/personal_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_6"
+                        android:icon="@drawable/ic_categories_entertainment"
+                        android:title="@string/entertainment_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_7"
+                        android:icon="@drawable/ic_categories_health"
+                        android:title="@string/health_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_8"
+                        android:icon="@drawable/ic_category_savings"
+                        android:title="@string/savings_root"/>
+                    <item
+                        android:id="@+id/item_filter_category_9"
+                        android:icon="@drawable/ic_categories_others"
+                        android:title="@string/others_root"/>
+                </menu>
+            </item>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/item_sort"
+        android:title="sort"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_sort">
+        <menu>
+            <item
+                android:title="Date">
+                <menu>
+                    <item
+                        android:id="@+id/item_sort_date_asc"
+                        android:title="Ascending"/>
+                    <item
+                        android:id="@+id/item_sort_date_dsc"
+                        android:title="Descending"/>
+                </menu>
+            </item>
+            <item
+                android:title="Category">
+                <menu>
+                    <item
+                        android:id="@+id/item_sort_cat_asc"
+                        android:title="Ascending"/>
+                    <item
+                        android:id="@+id/item_sort_cat_dsc"
+                        android:title="Descending"/>
+                </menu>
+            </item>
+            <item
+                android:title="Amount">
+                <menu>
+                    <item
+                        android:id="@+id/item_sort_amount_asc"
+                        android:title="Ascending"/>
+                    <item
+                        android:id="@+id/item_sort_amount_dsc"
+                        android:title="Descending"/>
+                </menu>
+            </item>
+        </menu>
+    </item>
+
+</menu>

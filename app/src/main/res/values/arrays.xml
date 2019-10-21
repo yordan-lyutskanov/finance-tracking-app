@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_root">
+        <item name="housing_root">Housing</item>
+        <item name="utilities_root">Utilities</item>
+        <item name="groceries_root">Food</item>
+        <item name="transportation_root">Transportation</item>
+        <item name="personal_root">Personal</item>
+        <item name="entertainment_root">Entertainment</item>
+        <item name="health_root">Health</item>
+        <item name="savings_root">Savings</item>
+        <item name="others_root">Others</item>
+    </string-array>
+
+    <string-array name="housing_subcat">
+        <item name="housing_mortgage_rent">Mortgage/Rent</item>
+        <item name="housing_taxes">Taxes</item>
+        <item name="housing_insurance">Insurance</item>
+        <item name="housing_maintenance">Maintenance</item>
+        <item name="housing_improvements">Improvements</item>
+        <item name="housing_hoa_dues">HOE Dues</item>
+    </string-array>
+
+    <string-array name="utilities_subcategories">
+        <item name="utilities_electricity">Electricity</item>
+        <item name="utilities_water">Water</item>
+        <item name="utilities_gas">Gas</item>
+        <item name="utilities_phone">Phone</item>
+        <item name="utilities_cable">Cable</item>
+        <item name="utilities_internet">Internet</item>
+    </string-array>
+
+    <string-array name="food_subcategories">
+        <item name="food_groceries">Groceries</item>
+        <item name="food_eating_out">Eating out</item>
+        <item name="food_coffee">Coffee</item>
+    </string-array>
+
+    <string-array name="transportation_subcategories">
+        <item name="transportation_insurance_etc">Insurance/Tax/Fees</item>
+        <item name="transportation_gas">Gas</item>
+        <item name="transportation_maintenance_repairs">Maintenance/Repairs</item>
+        <item name="transportation_public_transport">Public Transport</item>
+        <item name="transportation_parking">Parking</item>
+    </string-array>
+
+    <string-array name="personal_subcategories">
+        <item name="personal_clothing">Clothing</item>
+        <item name="personal_shoes">Shoes</item>
+        <item name="personal_cosmetics">Cosmetics</item>
+        <item name="personal_haircuts">Haircuts</item>
+        <item name="personal_gym_membership">Gym / Sport</item>
+    </string-array>
+
+    <string-array name="entertainment_subcategories">
+        <item name="entertainment_movies">Movies</item>
+        <item name="entertainment_concerts">Concerts</item>
+        <item name="entertainment_travel">Travel</item>
+        <item name="entertainment_hobbies">Hobbies</item>
+    </string-array>
+
+    <string-array name="health_subcategories">
+        <item name="health_hdv_insurance">Insurance</item>
+        <item name="health_life_insurance">Life Insurance</item>
+        <item name="health_oop_hdv_expenses">Out of pocket</item>
+        <item name="health_medicines">Medicines</item>
+    </string-array>
+
+    <string-array name="savings_subcategories">
+        <item name="savings_retirement">Retirement Fund</item>
+        <item name="savings_emcy_fund">Emergency Fund</item>
+        <item name="savings_educ_fund">Education Fund</item>
+        <item name="savings_sinking_fund">Sinking Fund</item>
+    </string-array>
+
+    <string-array name="others_subcategories">
+        <item name="others">Others</item>
+    </string-array>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Hour</item>
+        <item>3 Hours</item>
+        <item>6 Hours</item>
+        <item>12 Hours</item>
+        <item>24 Hours</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>1</item>
+        <item>3</item>
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+</resources>

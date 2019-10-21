@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <PreferenceCategory app:title="Budgeting Limits">
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="budget_pref_switch"
+            android:title="Budgeting Settings" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/housing_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_2"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/utilities_root"/>
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/groceries_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_4"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/transportation_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_5"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/personal_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_6"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/entertainment_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_7"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/health_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_8"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/savings_root" />
+        <EditTextPreference
+            app:dependency="budget_pref_switch"
+            android:defaultValue="0"
+            android:key="preference_category_budget_9"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/others_root"/>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

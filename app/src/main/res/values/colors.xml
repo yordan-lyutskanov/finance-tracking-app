@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#a7c0cd</color>
+    <color name="colorPrimaryExtraLight">#BBCBD1</color>
+    <color name="colorPrimary">#78909C</color>
+    <color name="colorDash1">#B2B5C9</color>
+    <color name="colorDash2">#FFF6DE</color>
+    <color name="colorDash3">#FFE5DE</color>
+    <color name="colorDash4">#e0e0e0</color>
+    <color name="colorPrimaryDark">#4B636E</color>
+    <color name="colorAccent">#9ccc65</color>
+
+    <!--  Pie Chart Colors  -->
+    <color name="colorPie">#FD8F8F</color>FF7676
+    <color name="colorPie1">#C8E69E</color>
+    <color name="colorPie2">#FFB381</color>
+    <color name="colorPie3">#47D278</color>
+    <color name="colorPie4">#FD5757</color>
+    <color name="colorPie5">#95FFF2</color>
+    <color name="colorPie6">#8EB155</color>
+    <color name="colorPie7">#C9EDE8</color>
+    <color name="colorPie8">#E3CAFF</color>
+</resources>
