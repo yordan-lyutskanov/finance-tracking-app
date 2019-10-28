@@ -5,6 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.lifecycle.Observer;
 import androidx.preference.PreferenceManager;
@@ -28,7 +29,6 @@ public class App extends Application {
         context = this;
         createNotificationChannel();
         CategoriesUtils.initCategories(this);
-
         PreferenceManager.setDefaultValues(this, R.xml.root_settings, false);
     }
 

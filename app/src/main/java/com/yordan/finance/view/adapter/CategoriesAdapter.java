@@ -1,5 +1,6 @@
 package com.yordan.finance.view.adapter;
 
+import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +37,12 @@ public class CategoriesAdapter extends BaseExpandableListAdapter {
         this.context = context;
         rootCategories = CategoriesUtils.getCategories();
         subcategories = CategoriesUtils.getSubcategories();
-        notifyDataSetChanged();
+
+        if(rootCategories.isEmpty() || subcategories.isEmpty()){
+            CategoriesUtils.initCategories((Application) context.getApplicationContext());
+            rootCategories = CategoriesUtils.getCategories();
+            subcategories = CategoriesUtils.getSubcategories();
+        }
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.yordan.finance.utils;
 import android.app.Application;
+import android.util.Log;
+
 import com.yordan.finance.App;
 import com.yordan.finance.R;
 import com.yordan.finance.data.repository.Repository;
