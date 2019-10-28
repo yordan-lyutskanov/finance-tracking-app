@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import com.yordan.finance.model.Expense;
 import com.yordan.finance.model.Item;
 import com.yordan.finance.data.repository.Repository;
+import com.yordan.finance.utils.DateUtils;
 import com.yordan.finance.utils.FilterSortUtils;
 
 import java.util.List;
@@ -47,7 +48,8 @@ public class AppViewModel extends AndroidViewModel {
 
     public void addItemToTemp(String expenseName, String itemName, String price, int expenseId, int category, long date){
         if(tempExpense == null){
-            tempExpense = new Expense.Builder(expenseId, category).name(expenseName).build();
+            int dateAsInt = DateUtils.longDateToInt(date);
+            tempExpense = new Expense.Builder(expenseId, category).name(expenseName).date(dateAsInt).build();
         }
 
         Item item = new Item(itemName, Double.parseDouble(price));

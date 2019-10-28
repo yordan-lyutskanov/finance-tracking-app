@@ -31,6 +31,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.yordan.finance.R;
 import com.yordan.finance.model.Expense;
+import com.yordan.finance.model.Item;
 import com.yordan.finance.utils.FilterSortUtils;
 import com.yordan.finance.view.adapter.PurchaseRvAdapter;
 import com.yordan.finance.view.ui.dialogs.ChangeExpenseDialog;
@@ -41,7 +42,7 @@ import java.util.List;
 public class ActivityExpenseList extends AppCompatActivity {
 
     public static final String TAG = ActivityExpenseList.class.getSimpleName();
-    private static final String NUM_DELETED_EXPENSES = "NumberOfDeletedExpenses" ;
+    private static final String NUM_DELETED_EXPENSES = "NumberOfDeletedExpenses";
     private static final String NUM_ITEMS_DELETED = "NumberOfItemsDeleted";
 
     private AppViewModel expenseViewModel;
@@ -107,15 +108,22 @@ public class ActivityExpenseList extends AppCompatActivity {
             }
         });
 
+        expenseViewModel.getItems().observe(this, new Observer<List<Item>>() {
+            @Override
+            public void onChanged(List<Item> items) {
+                adapter.setItems(items);
+            }
+        });
+
         tvFilterName.setText(activeFilter);
 
         mPurchasesRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if(dy > 0){
+                if (dy > 0) {
                     animateToolbarExit();
-                }else{
+                } else {
                     animateToolbarEntry();
                 }
             }
@@ -129,7 +137,7 @@ public class ActivityExpenseList extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-               removeItemFromList(viewHolder.getAdapterPosition());
+                removeItemFromList(viewHolder.getAdapterPosition());
             }
 
         }).attachToRecyclerView(mPurchasesRv);
@@ -137,25 +145,22 @@ public class ActivityExpenseList extends AppCompatActivity {
         registerForContextMenu(mPurchasesRv);
     }
 
-    private void removeItemFromList(int position){
+    private void removeItemFromList(int position) {
         Expense tempExpense = adapter.getExpenseAt(position);
 
         expenseViewModel.deleteExpense(tempExpense);
-        Snackbar snackbar =  Snackbar.make(clRoot, "Item removed.", Snackbar.LENGTH_LONG);
+        Snackbar snackbar = Snackbar.make(clRoot, "Item removed.", Snackbar.LENGTH_LONG);
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) snackbar.getView().getLayoutParams();
-        params.setMargins(0 , 0, 0, mPurchasesRv.getHeight());
+        params.setMargins(0, 0, 0, mPurchasesRv.getHeight());
         snackbar.getView().setLayoutParams(params);
-        expenseWasDeleted();
 
         snackbar.setAction("Undo", (v) -> {
             expenseViewModel.addExpense(tempExpense);
             List<Expense> newExpenses = adapter.getExpenses();
             newExpenses.add(position, tempExpense);
             adapter.setExpenses(newExpenses);
-            expenseDeleteWasUndone();
         }).show();
     }
-
 
 
     @Override
@@ -167,7 +172,7 @@ public class ActivityExpenseList extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.item_filter_date_today:
                 FilterSortUtils.setActiveFilter(FilterSortUtils.FILTER_DATE_TODAY);
                 reloadData();
@@ -262,13 +267,13 @@ public class ActivityExpenseList extends AppCompatActivity {
                 break;
         }
 
-        if(FilterSortUtils.getActiveFilter() == null
-                || FilterSortUtils.getActiveFilter().isEmpty()){
+        if (FilterSortUtils.getActiveFilter() == null
+                || FilterSortUtils.getActiveFilter().isEmpty()) {
             activeFilter = "No active filter.";
-        }else{
-            if(item.getItemId() != R.id.item_filter
-            && item.getItemId() != R.id.item_root_date
-            && item.getItemId() != R.id.item_root_cat){
+        } else {
+            if (item.getItemId() != R.id.item_filter
+                    && item.getItemId() != R.id.item_root_date
+                    && item.getItemId() != R.id.item_root_cat) {
                 activeFilter = item.getTitle().toString();
             }
         }
@@ -278,7 +283,7 @@ public class ActivityExpenseList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void reloadData(){
+    private void reloadData() {
         expenseViewModel.getSortedExpenses().observe(this, new Observer<List<Expense>>() {
             @Override
             public void onChanged(List<Expense> expenses) {
@@ -290,8 +295,7 @@ public class ActivityExpenseList extends AppCompatActivity {
     }
 
 
-
-    private void setNavbarViews(){
+    private void setNavbarViews() {
         mainCoordinatorLayout = findViewById(R.id.main_coordinator);
         bottomAppBar = findViewById(R.id.bottom_app_bar);
         mainFab = findViewById(R.id.main_fab);
@@ -301,7 +305,7 @@ public class ActivityExpenseList extends AppCompatActivity {
         ivGoStatistics = findViewById(R.id.iv_go_statistics);
     }
 
-    private void setNavBarClickListeners(){
+    private void setNavBarClickListeners() {
         mainFab.setOnClickListener((view -> {
             Intent intent = new Intent(this, ActivityChooseCategory.class);
             startActivity(intent);
@@ -333,7 +337,7 @@ public class ActivityExpenseList extends AppCompatActivity {
         }));
     }
 
-    private void animateToolbarExit(){
+    private void animateToolbarExit() {
         bottomAppBar.animate()
                 .translationY(bottomAppBar.getHeight())
                 .alpha(0.0f)
@@ -358,7 +362,7 @@ public class ActivityExpenseList extends AppCompatActivity {
                 });
     }
 
-    private void animateToolbarEntry(){
+    private void animateToolbarEntry() {
         bottomAppBar.animate()
                 .translationY(0f)
                 .alpha(1f)
@@ -387,7 +391,7 @@ public class ActivityExpenseList extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         int position = adapter.getPosition();
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.popup_item_edit:
                 ChangeExpenseDialog dialog = new ChangeExpenseDialog(adapter.getExpenseAt(position), expenseViewModel);
                 dialog.show(getSupportFragmentManager(), "TAG");
@@ -399,24 +403,5 @@ public class ActivityExpenseList extends AppCompatActivity {
 
         return super.onContextItemSelected(item);
     }
-
-    private void expenseWasDeleted(){
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        int numExpensesDeleted = sharedPreferences.getInt(NUM_DELETED_EXPENSES, 0);
-        sharedPreferences.edit().putInt(NUM_DELETED_EXPENSES, ++numExpensesDeleted).apply();
-
-        int numItemsDeleted = sharedPreferences.getInt(NUM_ITEMS_DELETED, 0);
-        sharedPreferences.edit().putInt(NUM_ITEMS_DELETED, ++numExpensesDeleted).apply();
-    }
-
-    private void expenseDeleteWasUndone(){
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        int numExpensesDeleted = sharedPreferences.getInt(NUM_DELETED_EXPENSES, 0);
-        sharedPreferences.edit().putInt(NUM_DELETED_EXPENSES, --numExpensesDeleted).apply();
-
-        int numItemsDeleted = sharedPreferences.getInt(NUM_ITEMS_DELETED, 0);
-        sharedPreferences.edit().putInt(NUM_ITEMS_DELETED, --numExpensesDeleted).apply();
-    }
 }
+

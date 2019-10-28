@@ -2,6 +2,7 @@ package com.yordan.finance.view.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -154,11 +155,6 @@ public class PurchaseRvAdapter extends RecyclerView.Adapter<PurchaseRvAdapter.Ex
 
     public List<Expense> getExpenses(){
         return mExpenses;
-    }
-
-    public void updateList(List<Expense> newList){
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new myDiffutilCallback(mExpenses, newList));
-        diffResult.dispatchUpdatesTo(this);
     }
 
     private void setPosition(int position){

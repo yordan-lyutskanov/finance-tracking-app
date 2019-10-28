@@ -26,6 +26,10 @@ public class DateUtils {
         return new Date(intDate * 1000L);
     }
 
+    public static int longDateToInt(long date){
+        return (int) (date / 1000L);
+    }
+
     public static int sevenDaysAgoDateAsInt(){
         return currentDate() - secToday() - 6 * 24 * 60 * 60;
     }

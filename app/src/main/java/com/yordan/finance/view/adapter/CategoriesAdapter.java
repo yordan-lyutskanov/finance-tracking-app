@@ -36,6 +36,7 @@ public class CategoriesAdapter extends BaseExpandableListAdapter {
         this.context = context;
         rootCategories = CategoriesUtils.getCategories();
         subcategories = CategoriesUtils.getSubcategories();
+        notifyDataSetChanged();
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -44,14 +45,13 @@ public abstract class FinanceRoomDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), FinanceRoomDatabase.class,
                     "finance_database")
+                    .addCallback(roomCallback)
                     .addMigrations(MIGRATION_1_2)
                     .addMigrations(MIGRATION_2_3)
-                    .addCallback(roomCallback)
                     .build();
         }
         return INSTANCE;
     }
-
 
     /*
      Adding callback to populate the DB only the first time when it is created.
